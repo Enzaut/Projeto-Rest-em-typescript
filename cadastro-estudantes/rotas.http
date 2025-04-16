@@ -1,0 +1,105 @@
+########################################
+### UFs
+########################################
+
+### Criar UF
+POST http://localhost:3000/ufs
+Content-Type: application/json
+
+{
+  "nome": "Paraná",
+  "sigla": "PR"
+}
+
+### Listar UFs
+GET http://localhost:3000/ufs
+
+### Buscar UF por ID
+GET http://localhost:3000/ufs/1
+Content-Type: application/json
+
+{
+  "id": "2"
+}
+### Atualizar UF
+PUT http://localhost:3000/ufs/1
+Content-Type: application/json
+
+{
+  "nome": "Paraná Atualizado"
+}
+
+### Deletar UF
+DELETE http://localhost:3000/ufs/1
+
+
+
+########################################
+### Cidades
+########################################
+
+### Criar Cidade (UF id = 1)
+POST http://localhost:3000/cidades
+Content-Type: application/json
+
+{
+  "nome": "Curitiba",
+  "ufId": 2
+}
+
+### Listar Cidades
+GET http://localhost:3000/cidades
+
+### Buscar Cidade por ID
+GET http://localhost:3000/cidades/1
+
+### Atualizar Cidade
+PUT http://localhost:3000/cidades/1
+Content-Type: application/json
+
+{
+  "nome": "Curitiba Atualizada",
+  "ufId": 2
+}
+
+### Deletar Cidade
+DELETE http://localhost:3000/cidades/1
+
+
+
+########################################
+### Estudantes
+########################################
+
+### Criar Estudante (Cidade id = 1)
+POST http://localhost:3000/estudantes
+Content-Type: application/json
+
+{
+  "nome": "Maria Oliveira",
+  "matricula": "202401",
+  "email": "maria@email.com",
+  "dt_nascimento": "2002-03-14",
+  "cidadeId": 1
+}
+
+### Listar Estudantes
+GET http://localhost:3000/estudantes
+
+### Buscar Estudante por ID
+GET http://localhost:3000/estudantes/1
+
+### Atualizar Estudante
+PUT http://localhost:3000/estudantes/1
+Content-Type: application/json
+
+{
+  "nome": "Maria O. Silva",
+  "matricula": "202401",
+  "email": "maria.silva@email.com",
+  "dt_nascimento": "2002-03-14",
+  "cidadeId": 1
+}
+
+### Deletar Estudante
+DELETE http://localhost:3000/estudantes/1
