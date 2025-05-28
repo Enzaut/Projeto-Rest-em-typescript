@@ -1,0 +1,327 @@
+########################################
+### USUÁRIOS
+########################################
+
+### Criar Usuário
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+  "nome": "João",
+  "email": "joao@email.com",
+  "senha": "123456"
+}
+
+### Listar Usuários
+GET http://localhost:3000/usuario
+
+### Buscar Usuário por ID
+GET http://localhost:3000/usuario/1
+
+### Atualizar Usuário
+PUT http://localhost:3000/usuario/1
+Content-Type: application/json
+
+{
+  "nome": "João Atualizado",
+  "email": "joao.novo@email.com"
+}
+
+### Deletar Usuário
+DELETE http://localhost:3000/usuario/1
+
+
+########################################
+### ADMINISTRADORES
+########################################
+
+### Criar Administrador
+POST http://localhost:3000/administrador
+Content-Type: application/json
+
+{
+  "nome": "Admin",
+  "email": "admin@horti.com",
+  "senha": "admin123"
+}
+
+### Listar Administradores
+GET http://localhost:3000/administrador
+
+### Buscar Administrador por ID
+GET http://localhost:3000/administrador/1
+
+### Atualizar Administrador
+PUT http://localhost:3000/administrador/1
+Content-Type: application/json
+
+{
+  "nome": "Admin Atualizado"
+}
+
+### Deletar Administrador
+DELETE http://localhost:3000/administrador/1
+
+
+########################################
+### MOTOBOYS
+########################################
+
+### Criar Motoboy
+POST http://localhost:3000/motoboy
+Content-Type: application/json
+
+{
+  "nome": "Carlos",
+  "cpf":413431315353,
+  "telefone": 2831273843
+}
+
+### Listar Motoboys
+GET http://localhost:3000/motoboy
+
+### Buscar Motoboy por ID
+GET http://localhost:3000/motoboy/1
+
+### Atualizar Motoboy
+PUT http://localhost:3000/motoboy/1
+Content-Type: application/json
+
+{
+  "nome": "Enzo",
+  "cpf":23,
+  "telefone": 4353
+}
+
+### Deletar Motoboy
+DELETE http://localhost:3000/motoboy/1
+
+
+########################################
+### VENDEDORES
+########################################
+
+### Criar Vendedor
+POST http://localhost:3000/vendedor
+Content-Type: application/json
+
+{
+  "nome": "Maria",
+  "email": "maria@horti.com",
+  "senha": 234324
+}
+
+### Listar Vendedores
+GET http://localhost:3000/vendedor
+
+### Buscar Vendedor por ID
+GET http://localhost:3000/vendedor/1
+
+### Atualizar Vendedor
+PUT http://localhost:3000/vendedor/1
+Content-Type: application/json
+
+{
+  "nome": "Maria Atualizada"
+}
+
+### Deletar Vendedor
+DELETE http://localhost:3000/vendedor/1
+
+
+########################################
+### LOJAS
+########################################
+
+### Criar Loja (vendedorId = 1)
+POST http://localhost:3000/loja
+Content-Type: application/json
+
+{
+  "nome": "Horti Top",
+  "cnpj":4336446245,
+  "endereco": 3103443,
+  "vendedorId": 2
+}
+
+### Listar Lojas
+GET http://localhost:3000/loja
+
+### Buscar Loja por ID
+GET http://localhost:3000/loja/1
+
+### Atualizar Loja
+PUT http://localhost:3000/loja/1
+Content-Type: application/json
+
+{
+  "nome": "Horti Top",
+  "cnpj":4336446245,
+  "endereco": 3103443,
+  "vendedorId": 2
+}
+
+### Deletar Loja
+DELETE http://localhost:3000/loja/1
+
+
+########################################
+### FRUTAS
+########################################
+
+### Criar Fruta (lojaId = 1)
+POST http://localhost:3000/fruta
+Content-Type: application/json
+
+{
+  "nome": "Banana",
+  "preco": 5.99,
+  "unidade": 34,
+  "categoriaId":1,
+  "lojaId": 2
+}
+
+### Listar Frutas
+GET http://localhost:3000/fruta
+
+### Buscar Fruta por ID
+GET http://localhost:3000/fruta/1
+
+### Atualizar Fruta
+PUT http://localhost:3000/fruta/1
+Content-Type: application/json
+
+{
+  "preco": 4.49
+}
+
+### Deletar Fruta
+DELETE http://localhost:3000/fruta/1
+
+
+########################################
+### CATEGORIAS
+########################################
+
+### Criar Categoria
+POST http://localhost:3000/categoria
+Content-Type: application/json
+
+{
+  "nome": "Orgânicos"
+}
+
+### Listar Categorias
+GET http://localhost:3000/categoria
+
+### Buscar Categoria por ID
+GET http://localhost:3000/categoria/1
+
+### Atualizar Categoria
+PUT http://localhost:3000/categoria/1
+Content-Type: application/json
+
+{
+  "nome": "Convencionais"
+}
+
+### Deletar Categoria
+DELETE http://localhost:3000/categoria/1
+
+
+########################################
+### ENDEREÇOS
+########################################
+
+### Criar Endereço
+POST http://localhost:3000/endereco
+Content-Type: application/json
+
+{
+  "rua": "Rua das Frutas",
+  "bairro": "Verde Vale",
+  "numero": "123",
+  "cidade": "noooo",
+  "usuarioId": 2
+}
+
+### Listar Endereços
+GET http://localhost:3000/endereco
+
+### Buscar Endereço por ID
+GET http://localhost:3000/endereco/1
+
+### Atualizar Endereço
+PUT http://localhost:3000/endereco/1
+Content-Type: application/json
+
+{
+  "numero": "999"
+}
+
+### Deletar Endereço
+DELETE http://localhost:3000/endereco/1
+
+
+########################################
+### PEDIDOS
+########################################
+
+### Criar Pedido (usuarioId = 1, motoboyId = 1)
+POST http://localhost:3000/pedido
+Content-Type: application/json
+
+{
+  "usuarioId": 1,
+  "motoboyId": 1,
+}
+
+### Listar Pedidos
+GET http://localhost:3000/pedido
+
+### Buscar Pedido por ID
+GET http://localhost:3000/pedido/1
+
+### Atualizar Pedido
+PUT http://localhost:3000/pedido/1
+Content-Type: application/json
+
+{
+  "status": "entregue"
+}
+
+### Deletar Pedido
+DELETE http://localhost:3000/pedido/1
+
+
+########################################
+### ITENS DO PEDIDO
+########################################
+
+### Criar ItemPedido (pedidoId = 1, frutaId = 1)
+POST http://localhost:3000/item-pedido
+Content-Type: application/json
+
+{
+  "precoUnitario":1,
+  "quantidade": 2,
+  "pedidoId": 1,
+  "frutaId": 1
+}
+
+### Listar Itens do Pedido
+GET http://localhost:3000/item-pedido
+
+### Buscar ItemPedido por ID
+GET http://localhost:3000/item-pedido/1
+
+### Atualizar ItemPedido
+PUT http://localhost:3000/item-pedido/1
+Content-Type: application/json
+
+{
+  "quantidade": 5
+}
+
+### Deletar ItemPedido
+DELETE http://localhost:3000/item-pedido/1
